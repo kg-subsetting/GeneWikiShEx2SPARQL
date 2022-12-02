@@ -13,3 +13,7 @@
 1670008083563:run --shex shex/GeneWiki.shex
 1670008215123:run --shex shex/GeneWiki.shex --output sparql
 1670019526805:git add .
+1670019538265:git commit -m "First version"
+1670019610338:git rm .
+1670019614691:git rm -r .
+1670019627315:git add .
