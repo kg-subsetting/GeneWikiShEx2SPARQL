@@ -17,3 +17,12 @@
 1670019610338:git rm .
 1670019614691:git rm -r .
 1670019627315:git add .
+1670019634842:git commit -m "First version"
+1670019640469:git push
+1670055302492:run --shex shex/GeneWiki.shex --output sparql
+1670090900650:exit
+1670090917443:quit
+1670090920189:exit
+1670090947148:run --shex shex/GeneWiki.shex --output target/sparql
+1670096418521:run --shex shex/GeneWiki.shex --runQueries
+1670108050158:git add .

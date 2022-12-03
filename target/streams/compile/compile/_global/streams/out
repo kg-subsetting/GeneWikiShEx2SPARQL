@@ -1,5 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E008] Not Found Error: /home/labra/GeneWikiShEx2SPARQL/src/main/scala/es/weso/Main.scala:50:125 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m50 |[0m  [33mdef[0m [36mcreateSPARQLQueries[0m([36mschema[0m: [35mSchema[0m): [35mIO[0m[[35mList[0m[[35mQuery[0m]] = IO.println([31ms"Schema: [0m${schema.shapeList.map(_.id.getOrElse([31m""[0m)).mkList([31m","[0m)}[31m"[0m) *> IO.pure(List(Query()))[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0mvalue mkList is not a member of List[Object] - did you mean List[Object].toList?[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere was 1 deprecation warning; re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

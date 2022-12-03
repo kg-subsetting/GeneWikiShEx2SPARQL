@@ -1,3 +1,3 @@
 package es.weso
 
-case class ItemType(id: String)
+case class ItemType(qid: String, name: String)
