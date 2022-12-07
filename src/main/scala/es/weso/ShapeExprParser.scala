@@ -1,5 +1,5 @@
 package es.weso
-import es.weso.shex._
+import es.weso.shex.{VarName => _, _}
 import es.weso.rdf.nodes._
 import es.weso.rdf._
 
@@ -32,13 +32,15 @@ case class ParsePropertyDecl_ShapeNotFound(tc: TripleConstraint, sl: ShapeLabel)
 case class GetPropertyName_DontMatch(p: IRI) 
  extends RuntimeException(s"GetPropertyName: no match with wdt: $p")
 
-case class ShapeExprParser(schema: Schema) {
+case class ShapeExprParser(schema: Schema, maybeGraph: Option[String]) {
 
   def parse(se: ShapeExpr): QueryWrapper = 
     QueryWrapper(
       getName(se), 
+      "",
       getTypeConstraint(se), 
-      getPropertyConstraints(se)
+      getPropertyConstraints(se),
+      maybeGraph
     )
 
   def getName(se: ShapeExpr): String = 
@@ -86,7 +88,7 @@ case class ShapeExprParser(schema: Schema) {
   }
 
   def getItemTypeFromValueSetValue(v: ValueSetValue, se: ShapeExpr): ItemType = v match {
-    case IRIValue(v) => ItemType(prefixMap.qualifyIRI(v), getName(se))
+    case IRIValue(v) => ItemType(prefixMap.qualifyIRI(v), getName(se), "")
     case _ => throw GetItemTypeFromValueSetValue_ExpectedIRIValue(v)
   }
 
@@ -96,7 +98,8 @@ case class ShapeExprParser(schema: Schema) {
   lazy val wdt_p31: IRI = wdt + "P31"
   lazy val rdfs_label = rdfs + "label"
 
-  def getPropertyConstraints(se: ShapeExpr): List[Property] = getTripleConstraints(se).map(parsePropertyDecl).flatten
+  def getPropertyConstraints(se: ShapeExpr): Map[VarName,Property] = 
+    getTripleConstraints(se).map(parsePropertyDecl).flatten.map(p => (p.toVarName, p)).toMap
 
   def parsePropertyDecl(tc: TripleConstraint): Option[Property] = tc.predicate match {
     case `wdt_p31` => None
@@ -106,7 +109,7 @@ case class ShapeExprParser(schema: Schema) {
         case sr: ShapeRef => schema.getShape(sr.reference).fold(
           err => throw ParsePropertyDecl_ShapeNotFound(tc, sr.reference),
           se => Some(Property(getPropertyName(p), 
-                              ItemType(getTypeConstraint(se).qid, getName(se))))
+                              ItemType(getTypeConstraint(se).qid, getName(se),"")))
         ) 
         case _ => throw ParsePropertyDecl_NoShapeRef(tc)
       }

@@ -26,3 +26,31 @@
 1670090947148:run --shex shex/GeneWiki.shex --output target/sparql
 1670096418521:run --shex shex/GeneWiki.shex --runQueries
 1670108050158:git add .
+1670108063571:git commit -m "Queries generated"
+1670108068933:git push
+1670108395403:run --shex shex/GeneWiki.shex --runQueries
+1670137942571:run --shex shex/GeneWiki.shex --runQueries --endpoint http://156.35.94.157/data/sparql
+1670138323315:run --shex shex/GeneWiki.shex --runQueries --endpoint http://156.35.94.157/data/query
+1670138401234:run --shex shex/GeneWiki.shex --runQueries
+1670139432487:exit
+1670140033826:run --shex shex/GeneWiki.shex --runQueries --endpoint http://156.35.94.157/data/query --graph http://weso.es/GeneWiki2022
+1670173402661:run --shex shex/GeneWiki.shex --runQueries
+1670229990355:run --shex shex/GeneWiki.shex --runQueries --outputResult target/wikidataResults.json
+1670230006272:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.json
+1670243494464:run --shex shex/GeneWiki.shex --runQueries --outputResult target/wikidataResults.json
+1670244046552:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.json
+1670312679273:reload
+1670312969027:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.json
+1670313020601:reload
+1670313025873:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.json
+1670315394632:exit
+1670316413164:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.json
+1670355903574:exit
+1670401806211:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.json
+1670402057432:compile
+1670403772874:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.json
+1670405421450:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.plantuml --outputFormat PlantUML
+1670419137857:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.plantuml --outputFormat JSON
+1670426574682:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResultsjson --outputFormat JSON
+1670443229131:run --shex shex/GeneWiki.shex --runQueries --endpoint http://156.35.94.157/data/query --outputFormat JSON --outputResults target/GeneWiki2022.json
+1670451856980:git add .

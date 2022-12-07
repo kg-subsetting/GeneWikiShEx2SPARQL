@@ -4,21 +4,27 @@ import es.weso.rdf.nodes._
 
 case class QueryWrapper(
    name: String, 
+   label: String, 
    itemType: ItemType, 
-   properties: List[Property]
+   properties: Map[VarName, Property],
+   maybeGraph: Option[String]
    ) {
 
-    lazy val prefixes = """|prefix wd:       <http://www.wikidata.org/entity/> 
-                      |prefix wdt:      <http://www.wikidata.org/prop/direct/> 
-                      |""".stripMargin
+    def withLabel(lbl: String): QueryWrapper =
+        this.copy(label = lbl)
+
+    lazy val prefixes = 
+        """|prefix wd:       <http://www.wikidata.org/entity/> 
+           |prefix wdt:      <http://www.wikidata.org/prop/direct/> 
+           |""".stripMargin
 
     lazy val heading = s"(count(?$name) as ?count_$name) $propertiesVars"
 
-    lazy val propertiesVars = properties.map(_.toVarName).mkString(" ")
+    lazy val propertiesVars = properties.values.map(s => s"${s.toVarName}").mkString(" ")
 
     lazy val typePart = s"?$name wdt:P31 ${itemType.qid} ."
 
-    lazy val propertiesPart = properties.map(p => 
+    lazy val propertiesPart = properties.values.map(p => 
         s"""|{ SELECT (count(?y) as ${p.toVarName}) {
             |   ?x wdt:P31 ${itemType.qid} .
             |   ?x wdt:${p.property} ?y .
@@ -34,8 +40,9 @@ case class QueryWrapper(
     lazy val queryString = 
         s"""|$prefixes
             |
-            |SELECT $heading WHERE {
-            | $typePart
+            |SELECT $heading ${maybeGraph.fold("")(g => s"\nFROM <$g>")}
+            |WHERE { 
+            |$typePart
             | 
             | $propertiesPart
             |
@@ -43,9 +50,9 @@ case class QueryWrapper(
             |""".stripMargin
     
     lazy val query: Query = {
-      /* println("-----------")  
+      println("-----------")  
       println(s"Query: \n$queryString")  
-      println("--end query---------")   */
+      println("--end query---------")   
       QueryFactory.create(queryString)
     }
 

@@ -22,6 +22,7 @@
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.3/slf4j-simple-1.7.3.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_3/3.4.2/cats-effect_3-3.4.2.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-circe_3/0.23.12/http4s-circe_3-0.23.12.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/jena/jena-arq/4.6.1/jena-arq-4.6.1.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.10/scala-library-2.13.10.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/monovore/decline_3/2.4.0/decline_3-2.4.0.jar",
@@ -47,6 +48,9 @@
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-ember-client_3/0.23.12/http4s-ember-client_3-0.23.12.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect-kernel_3/3.4.2/cats-effect-kernel_3-3.4.2.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect-std_3/3.4.2/cats-effect-std_3-3.4.2.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-core_3/0.23.12/http4s-core_3-0.23.12.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-jawn_3/0.23.12/http4s-jawn_3-0.23.12.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/jena/jena-core/4.6.1/jena-core-4.6.1.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/jsonld-java/jsonld-java/0.13.4/jsonld-java-0.13.4.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/code/gson/gson/2.9.1/gson-2.9.1.jar",
@@ -65,7 +69,6 @@
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_3/2.8.1/scala-collection-compat_3-2.8.1.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.11/logback-core-1.2.11.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.2/circe-numbers_3-0.14.2.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/fansi_3/0.3.1/fansi_3-0.3.1.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_3/0.2.8/sourcecode_3-0.2.8.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scodec/scodec-bits_3/1.1.34/scodec-bits_3-1.1.34.jar",
@@ -74,6 +77,14 @@
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-client_3/0.23.12/http4s-client_3-0.23.12.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/keypool_3/0.4.7/keypool_3-0.4.7.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/log4cats-slf4j_3/2.3.1/log4cats-slf4j_3-2.3.1.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/case-insensitive_3/1.2.0/case-insensitive_3-1.2.0.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-parse_3/0.3.7/cats-parse_3-0.3.7.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-crypto_3/0.2.3/http4s-crypto_3-0.2.3.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/literally_3/1.1.0/literally_3-1.1.0.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/log4s/log4s_3/1.10.0/log4s_3-1.10.0.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/vault_3/3.1.0/vault_3-3.1.0.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-fs2_3/2.2.0/jawn-fs2_3-2.2.0.jar",
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/jena/jena-base/4.6.1/jena-base-4.6.1.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/jena/jena-iri/4.6.1/jena-iri-4.6.1.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-cli/commons-cli/1.5.0/commons-cli-1.5.0.jar",
@@ -81,9 +92,6 @@
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.13.3/jackson-annotations-2.13.3.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jheaps/jheaps/0.11/jheaps-0.11.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/literally_3/1.1.0/literally_3-1.1.0.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-core_3/0.23.12/http4s-core_3-0.23.12.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/log4cats-core_3/2.3.1/log4cats-core_3-2.3.1.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/twitter/hpack/1.0.2/hpack-1.0.2.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/jena/jena-shaded-guava/4.6.1/jena-shaded-guava-4.6.1.jar",
@@ -92,12 +100,7 @@
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-codec/commons-codec/1.15/commons-codec-1.15.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar",
             "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/andrewoma/dexx/collection/0.7/collection-0.7.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/case-insensitive_3/1.2.0/case-insensitive_3-1.2.0.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-parse_3/0.3.7/cats-parse_3-0.3.7.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-crypto_3/0.2.3/http4s-crypto_3-0.2.3.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/log4s/log4s_3/1.10.0/log4s_3-1.10.0.jar",
-            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/vault_3/3.1.0/vault_3-3.1.0.jar"
+            "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"
         ],
         "out": "/home/labra/GeneWikiShEx2SPARQL/.bloop/GeneWikiShEx2SPARQL",
         "classesDir": "/home/labra/GeneWikiShEx2SPARQL/.bloop/GeneWikiShEx2SPARQL/scala-3/classes",
@@ -366,6 +369,23 @@
                             "name": "cats-effect_3",
                             "classifier": "sources",
                             "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_3/3.4.2/cats-effect_3-3.4.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.http4s",
+                    "name": "http4s-circe_3",
+                    "version": "0.23.12",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "http4s-circe_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-circe_3/0.23.12/http4s-circe_3-0.23.12.jar"
+                        },
+                        {
+                            "name": "http4s-circe_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-circe_3/0.23.12/http4s-circe_3-0.23.12-sources.jar"
                         }
                     ]
                 },
@@ -795,6 +815,57 @@
                     ]
                 },
                 {
+                    "organization": "org.http4s",
+                    "name": "http4s-core_3",
+                    "version": "0.23.12",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "http4s-core_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-core_3/0.23.12/http4s-core_3-0.23.12.jar"
+                        },
+                        {
+                            "name": "http4s-core_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-core_3/0.23.12/http4s-core_3-0.23.12-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.http4s",
+                    "name": "http4s-jawn_3",
+                    "version": "0.23.12",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "http4s-jawn_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-jawn_3/0.23.12/http4s-jawn_3-0.23.12.jar"
+                        },
+                        {
+                            "name": "http4s-jawn_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-jawn_3/0.23.12/http4s-jawn_3-0.23.12-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "io.circe",
+                    "name": "circe-jawn_3",
+                    "version": "0.14.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "circe-jawn_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2.jar"
+                        },
+                        {
+                            "name": "circe-jawn_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2-sources.jar"
+                        }
+                    ]
+                },
+                {
                     "organization": "org.apache.jena",
                     "name": "jena-core",
                     "version": "4.6.1",
@@ -1101,23 +1172,6 @@
                     ]
                 },
                 {
-                    "organization": "io.circe",
-                    "name": "circe-jawn_3",
-                    "version": "0.14.2",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "circe-jawn_3",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2.jar"
-                        },
-                        {
-                            "name": "circe-jawn_3",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.2/circe-jawn_3-0.14.2-sources.jar"
-                        }
-                    ]
-                },
-                {
                     "organization": "com.lihaoyi",
                     "name": "fansi_3",
                     "version": "0.3.1",
@@ -1254,6 +1308,142 @@
                     ]
                 },
                 {
+                    "organization": "org.typelevel",
+                    "name": "case-insensitive_3",
+                    "version": "1.2.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "case-insensitive_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/case-insensitive_3/1.2.0/case-insensitive_3-1.2.0.jar"
+                        },
+                        {
+                            "name": "case-insensitive_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/case-insensitive_3/1.2.0/case-insensitive_3-1.2.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-parse_3",
+                    "version": "0.3.7",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-parse_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-parse_3/0.3.7/cats-parse_3-0.3.7.jar"
+                        },
+                        {
+                            "name": "cats-parse_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-parse_3/0.3.7/cats-parse_3-0.3.7-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.http4s",
+                    "name": "http4s-crypto_3",
+                    "version": "0.2.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "http4s-crypto_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-crypto_3/0.2.3/http4s-crypto_3-0.2.3.jar"
+                        },
+                        {
+                            "name": "http4s-crypto_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-crypto_3/0.2.3/http4s-crypto_3-0.2.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "literally_3",
+                    "version": "1.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "literally_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/literally_3/1.1.0/literally_3-1.1.0.jar"
+                        },
+                        {
+                            "name": "literally_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/literally_3/1.1.0/literally_3-1.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.log4s",
+                    "name": "log4s_3",
+                    "version": "1.10.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "log4s_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/log4s/log4s_3/1.10.0/log4s_3-1.10.0.jar"
+                        },
+                        {
+                            "name": "log4s_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/log4s/log4s_3/1.10.0/log4s_3-1.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "vault_3",
+                    "version": "3.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "vault_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/vault_3/3.1.0/vault_3-3.1.0.jar"
+                        },
+                        {
+                            "name": "vault_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/vault_3/3.1.0/vault_3-3.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "jawn-fs2_3",
+                    "version": "2.2.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "jawn-fs2_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-fs2_3/2.2.0/jawn-fs2_3-2.2.0.jar"
+                        },
+                        {
+                            "name": "jawn-fs2_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-fs2_3/2.2.0/jawn-fs2_3-2.2.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "jawn-parser_3",
+                    "version": "1.3.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "jawn-parser_3",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2.jar"
+                        },
+                        {
+                            "name": "jawn-parser_3",
+                            "classifier": "sources",
+                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2-sources.jar"
+                        }
+                    ]
+                },
+                {
                     "organization": "org.apache.jena",
                     "name": "jena-base",
                     "version": "4.6.1",
@@ -1369,57 +1559,6 @@
                             "name": "jheaps",
                             "classifier": "sources",
                             "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jheaps/jheaps/0.11/jheaps-0.11-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.typelevel",
-                    "name": "jawn-parser_3",
-                    "version": "1.3.2",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "jawn-parser_3",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2.jar"
-                        },
-                        {
-                            "name": "jawn-parser_3",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.3.2/jawn-parser_3-1.3.2-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.typelevel",
-                    "name": "literally_3",
-                    "version": "1.1.0",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "literally_3",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/literally_3/1.1.0/literally_3-1.1.0.jar"
-                        },
-                        {
-                            "name": "literally_3",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/literally_3/1.1.0/literally_3-1.1.0-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.http4s",
-                    "name": "http4s-core_3",
-                    "version": "0.23.12",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "http4s-core_3",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-core_3/0.23.12/http4s-core_3-0.23.12.jar"
-                        },
-                        {
-                            "name": "http4s-core_3",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-core_3/0.23.12/http4s-core_3-0.23.12-sources.jar"
                         }
                     ]
                 },
@@ -1573,91 +1712,6 @@
                             "name": "commons-logging",
                             "classifier": "sources",
                             "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.typelevel",
-                    "name": "case-insensitive_3",
-                    "version": "1.2.0",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "case-insensitive_3",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/case-insensitive_3/1.2.0/case-insensitive_3-1.2.0.jar"
-                        },
-                        {
-                            "name": "case-insensitive_3",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/case-insensitive_3/1.2.0/case-insensitive_3-1.2.0-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.typelevel",
-                    "name": "cats-parse_3",
-                    "version": "0.3.7",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "cats-parse_3",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-parse_3/0.3.7/cats-parse_3-0.3.7.jar"
-                        },
-                        {
-                            "name": "cats-parse_3",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-parse_3/0.3.7/cats-parse_3-0.3.7-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.http4s",
-                    "name": "http4s-crypto_3",
-                    "version": "0.2.3",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "http4s-crypto_3",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-crypto_3/0.2.3/http4s-crypto_3-0.2.3.jar"
-                        },
-                        {
-                            "name": "http4s-crypto_3",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-crypto_3/0.2.3/http4s-crypto_3-0.2.3-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.log4s",
-                    "name": "log4s_3",
-                    "version": "1.10.0",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "log4s_3",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/log4s/log4s_3/1.10.0/log4s_3-1.10.0.jar"
-                        },
-                        {
-                            "name": "log4s_3",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/log4s/log4s_3/1.10.0/log4s_3-1.10.0-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.typelevel",
-                    "name": "vault_3",
-                    "version": "3.1.0",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "vault_3",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/vault_3/3.1.0/vault_3-3.1.0.jar"
-                        },
-                        {
-                            "name": "vault_3",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/vault_3/3.1.0/vault_3-3.1.0-sources.jar"
                         }
                     ]
                 }
