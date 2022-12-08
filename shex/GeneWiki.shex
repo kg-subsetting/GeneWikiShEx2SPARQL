@@ -123,10 +123,10 @@ start= @:active_site OR
   wdt:P2293 @:disease *;
   wdt:P703  @:taxon * ;
   wdt:P684  @:gene * ; 
-  wdt:P682  @:biological_process ;
+  wdt:P682  @:biological_process *;
   wdt:P688  @:protein * ;
   wdt:P527  @:biological_pathway *;
-  wdt:P1057 @:mechanism_of_action ;
+  wdt:P1057 @:mechanism_of_action *;
   wdt:P688 @:molecular_function *;
   wdt:P688 @:cellular_component*;
 }
@@ -163,7 +163,7 @@ start= @:active_site OR
   wdt:P680 @:molecular_function *;
   wdt:P702 @:gene*;
   wdt:P31 @:protein *;
-  wdt:P681 @:cellular_component*
+  wdt:P681 @:cellular_component *
 }
 
 :pharmaceutical_product EXTRA wdt:P31 {
