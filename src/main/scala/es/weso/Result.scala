@@ -32,17 +32,34 @@ sealed abstract class Result {
             Json.fromFields(List(
                 ("type", Json.fromString("Solution")),
                 ("name", Json.fromString(s.query.name)),
+                ("value", Json.fromString(s.value)),
                 ("label", Json.fromString(s.query.label)),
                 ("time", Json.fromString(showTime(s.duration))),
                 ("links", Json.fromValues(s.links.map(_.toJson)))
             ))
           }
 
-  def serialize(of: OutputFormat): String = of match {
-        case OutputFormat.JSON =>  
-          this.toJson.spaces2      
+  def toCSV: String = this match {
+    case qe: QueryError => 
+      s"${qe.query.name},Error ${qe.err.getMessage()},,"
+    case ns: NoSolution => 
+      s"${ns.query.name},0,,,"
+    case ss: SeveralSolutions => 
+      s"${ss.query.name},Several solutions,,,"
+    case s: Solution => 
+      s"${s.query.name},${s.value},,,\n" ++
+      s.links.map(_.toCSV).mkString("\n")
+  }
         
-        case OutputFormat.PlantUML => this match {
+
+  def serialize(of: OutputFormat): String = of match {
+    case OutputFormat.CSV =>
+      this.toCSV
+
+    case OutputFormat.JSON =>  
+        this.toJson.spaces2      
+        
+    case OutputFormat.PlantUML => this match {
             case qe: QueryError => 
                 s"""|annotation ${qe.query.name} { 
                     | Error: \"${qe.err.getMessage()}\" 
@@ -94,7 +111,7 @@ object Result {
  case class SeveralSolutions(query: QueryWrapper, rs: List[Solution], duration: FiniteDuration) extends Result
 
  case class LinkInfo(property: Property, value: String) {
-    def toJson: Json = Json.fromFields(List(
+   def toJson: Json = Json.fromFields(List(
      ("property", Json.fromString(property.property)),
      ("label", Json.fromString(property.label)),
      ("value", Json.fromString(value)),
@@ -102,6 +119,9 @@ object Result {
      ("itelLabel", Json.fromString(property.itemType.label)),
      ("itemId", Json.fromString(property.itemType.qid))
     ))
+
+   def toCSV: String =
+    s",,${property.label}(${property.property}),${property.itemType.name}(${property.itemType.qid}),${value}" 
  }
 
  private def showTime(duration: FiniteDuration): String =

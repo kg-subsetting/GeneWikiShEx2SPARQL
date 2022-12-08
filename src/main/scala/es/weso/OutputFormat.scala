@@ -7,6 +7,13 @@ sealed trait OutputFormat extends Named {
     def sep: String
 }
 object OutputFormat {
+    case object CSV extends OutputFormat { 
+        override val name ="CSV" 
+        override def start = "name,value,prop,propType,value\n"
+        override def end   = ""
+        override def sep   = "\n"
+    }
+ 
     case object JSON extends OutputFormat { 
         override val name ="JSON" 
         override def start = "[\n"
@@ -20,5 +27,5 @@ object OutputFormat {
         override def sep   = "\n"
     }
 
-    val availableOutputFormats = List(JSON, PlantUML)
+    val availableOutputFormats = List(JSON, CSV, PlantUML)
 }

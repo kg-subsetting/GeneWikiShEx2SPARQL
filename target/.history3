@@ -54,3 +54,17 @@
 1670426574682:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResultsjson --outputFormat JSON
 1670443229131:run --shex shex/GeneWiki.shex --runQueries --endpoint http://156.35.94.157/data/query --outputFormat JSON --outputResults target/GeneWiki2022.json
 1670451856980:git add .
+1670451873555:git commit -m "JSON and Plantuml creation"
+1670451883658:git push
+1670484424091:run --shex shex/GeneWiki.shex --runQueries --outputResults target/wikidataResults.csv --outputFormat CSV
+1670485678489:reload
+1670485746616:docker:publish
+1670485800764:reload
+1670485806668:docker:publish
+1670485859036:run
+1670485868917:run --help
+1670486115690:reload
+1670486158662:docs
+1670486164960:doc
+1670486462487:reload
+1670486472261:docker:publish

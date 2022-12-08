@@ -31,15 +31,9 @@ case class ProcessCommand(
 )
 
 object Main extends CommandIOApp(
-  name    = "GeneWikiShEx2SPARQL",
+  name    = "subshex2sparql",
   version = "0.0.1",
-  header  =
-     s"""|Convert GeneWiki ShEx to SPARQL queries
-         |
-         |Some examples: 
-         | GeneWikiShEx2SPARQL --shex shex/GeneWiki.shex --folder sparql
-         |   
-         |""".stripMargin.trim,
+  header  = "Convert a subset of ShEx to SPARQL queries",
 ) {
 
  val shexPath = Opts.option[Path](

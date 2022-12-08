@@ -1,5 +1,13 @@
-[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/genewikishex2sparql_3-0.0.0+4-847742d4+20221207-1958-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/subshex2sparql_3-0.0.2.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	buildinfo[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/classes/buildinfo[0m
+[0m[[0m[0mdebug[0m] [0m[0m	buildinfo/BuildInfo.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/classes/buildinfo/BuildInfo.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	buildinfo/BuildInfo$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/classes/buildinfo/BuildInfo$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	buildinfo/BuildInfo.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/classes/buildinfo/BuildInfo.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	es[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/classes/es[0m
 [0m[[0m[0mdebug[0m] [0m[0m	es/weso[0m
@@ -10,6 +18,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/classes/es/weso/OutputFormat.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	es/weso/ParsePropertyDecl_NoShapeRef.tasty[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/classes/es/weso/ParsePropertyDecl_NoShapeRef.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	es/weso/OutputFormat$CSV$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/classes/es/weso/OutputFormat$CSV$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	es/weso/OutputFormat$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/labra/GeneWikiShEx2SPARQL/target/scala-3.2.1/classes/es/weso/OutputFormat$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	es/weso/Result$Solution$.class[0m

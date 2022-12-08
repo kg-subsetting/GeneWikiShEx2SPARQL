@@ -1,4 +1,4 @@
-[debug] [GeneWikiShEx2SPARQL] Classpath dependencies List()
-[debug] [GeneWikiShEx2SPARQL] Dependencies from configurations List()
-[debug] Bloop wrote the configuration of project 'GeneWikiShEx2SPARQL' to '/home/labra/GeneWikiShEx2SPARQL/.bloop/GeneWikiShEx2SPARQL.json'
-[success] Generated .bloop/GeneWikiShEx2SPARQL.json
+[debug] [SubShEx2SPARQL] Classpath dependencies List()
+[debug] [SubShEx2SPARQL] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'SubShEx2SPARQL' to '/home/labra/GeneWikiShEx2SPARQL/.bloop/SubShEx2SPARQL.json'
+[success] Generated .bloop/SubShEx2SPARQL.json
