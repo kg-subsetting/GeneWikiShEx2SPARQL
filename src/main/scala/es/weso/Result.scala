@@ -47,8 +47,9 @@ sealed abstract class Result {
     case ss: SeveralSolutions => 
       s"${ss.query.name},Several solutions,,,"
     case s: Solution => 
-      s"${s.query.name},${s.value},,,\n" ++
-      s.links.map(_.toCSV).mkString("\n")
+      s"${s.query.name},${s.value},,," ++
+      (if (s.links.isEmpty) "" 
+       else "\n" ++ s.links.map(_.toCSV).mkString("\n"))
   }
         
 

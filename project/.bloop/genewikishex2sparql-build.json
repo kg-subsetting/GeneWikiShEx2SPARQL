@@ -2207,28 +2207,6 @@
                     ]
                 },
                 {
-                    "organization": "com.github.jnr",
-                    "name": "jffi",
-                    "version": "1.2.18",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "jffi",
-                            "classifier": "native",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/jnr/jffi/1.2.18/jffi-1.2.18-native.jar"
-                        },
-                        {
-                            "name": "jffi",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/jnr/jffi/1.2.18/jffi-1.2.18.jar"
-                        },
-                        {
-                            "name": "jffi",
-                            "classifier": "sources",
-                            "path": "/home/labra/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/jnr/jffi/1.2.18/jffi-1.2.18-sources.jar"
-                        }
-                    ]
-                },
-                {
                     "organization": "org.jruby.joni",
                     "name": "joni",
                     "version": "2.1.26",
