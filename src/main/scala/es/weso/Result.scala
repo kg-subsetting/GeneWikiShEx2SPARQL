@@ -99,7 +99,14 @@ object Result {
 
 
  case class QueryError(query: QueryWrapper, err: Throwable) extends Result 
- case class NoSolution(query: QueryWrapper, duration: FiniteDuration) extends Result 
+
+ case class NoSolution(query: QueryWrapper, links: List[LinkInfo], duration: FiniteDuration) extends Result {
+
+  def addLink(link: LinkInfo): NoSolution = 
+    this.copy(links = link +: this.links)
+
+ }
+
  case class Solution(query: QueryWrapper, value: String, links: List[LinkInfo], duration: FiniteDuration) extends Result {
 
   def withValue(v: String): Solution = this.copy(value = v)
@@ -129,4 +136,7 @@ object Result {
       s"${duration.toUnit(TimeUnit.SECONDS)}"
 
   def emptySolution(query: QueryWrapper, duration: FiniteDuration) = Solution(query, "", List(), duration)
+
+  def emptyNoSolution(query: QueryWrapper, duration: FiniteDuration) = NoSolution(query, List(), duration)
+
 }
