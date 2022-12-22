@@ -6,6 +6,8 @@ target/
 .scala-build/
 
 # sbt specific
+project/project/target/
+project/target/
 dist/*
 target/
 lib_managed/
