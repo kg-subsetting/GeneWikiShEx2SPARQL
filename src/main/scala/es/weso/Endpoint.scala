@@ -20,12 +20,21 @@ case class Endpoint(iri: String) {
     val vars = rs.getResultVars().asScala.toList
     val solutions = rs.asScala.toList
     solutions match {
-        case Nil => NoSolution(query, duration)
+        case Nil => mkNoSolution(query, vars, duration) 
         case solution :: Nil => 
             cnvSolution(solution, vars, query, duration)
         case sols => SeveralSolutions(query, sols.map(cnvSolution(_, vars, query, duration)), duration)
     }
   }
+
+  def mkNoSolution(query: QueryWrapper, vars: List[String], duration: FiniteDuration): NoSolution = 
+    vars.foldLeft(Result.emptyNoSolution(query, duration)) { case (current, v) => {
+      val maybeProperty = query.properties.get(VarName(v))
+      maybeProperty match {
+          case None => current
+          case Some(p) => current.addLink(LinkInfo(p, "0"))  
+        } 
+    }}
 
   def cnvSolution(
     solution:QuerySolution, 
