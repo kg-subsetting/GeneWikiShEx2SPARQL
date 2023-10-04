@@ -1,0 +1,15 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?symptom) AS ?count_symptom) ?count_P2176_chemical_compound
+WHERE
+  { ?symptom  wdt:P31  wd:Q169872
+    { SELECT  (COUNT(?y) AS ?count_P2176_chemical_compound)
+      WHERE
+        { ?x  wdt:P31    wd:Q169872 ;
+              wdt:P2176  ?y .
+          ?y  wdt:P31    wd:Q11173
+        }
+    }
+  }
+GROUP BY ?count_P2176_chemical_compound

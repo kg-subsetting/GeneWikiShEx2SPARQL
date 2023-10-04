@@ -1,0 +1,51 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?biological_pathway) AS ?count_biological_pathway) ?count_P361_biological_pathway ?count_P361_gene ?count_P361_medication ?count_P361_chemical_compound ?count_P703_taxon ?count_P527_disease
+WHERE
+  { ?biological_pathway
+              wdt:P31  wd:Q4915012
+    { SELECT  (COUNT(?y) AS ?count_P361_biological_pathway)
+      WHERE
+        { ?x  wdt:P31   wd:Q4915012 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q4915012
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_gene)
+      WHERE
+        { ?x  wdt:P31   wd:Q4915012 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q7187
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_medication)
+      WHERE
+        { ?x  wdt:P31   wd:Q4915012 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_chemical_compound)
+      WHERE
+        { ?x  wdt:P31   wd:Q4915012 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P703_taxon)
+      WHERE
+        { ?x  wdt:P31   wd:Q4915012 ;
+              wdt:P703  ?y .
+          ?y  wdt:P31   wd:Q16521
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_disease)
+      WHERE
+        { ?x  wdt:P31   wd:Q4915012 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q12136
+        }
+    }
+  }
+GROUP BY ?count_P361_biological_pathway ?count_P361_gene ?count_P361_medication ?count_P361_chemical_compound ?count_P703_taxon ?count_P527_disease

@@ -1,0 +1,23 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?pharmacologic_action) AS ?count_pharmacologic_action) ?count_P3780_pharmaceutical_product ?count_P2175_disease
+WHERE
+  { ?pharmacologic_action
+              wdt:P31  wd:Q50377224
+    { SELECT  (COUNT(?y) AS ?count_P3780_pharmaceutical_product)
+      WHERE
+        { ?x  wdt:P31    wd:Q50377224 ;
+              wdt:P3780  ?y .
+          ?y  wdt:P31    wd:Q28885102
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2175_disease)
+      WHERE
+        { ?x  wdt:P31    wd:Q50377224 ;
+              wdt:P2175  ?y .
+          ?y  wdt:P31    wd:Q12136
+        }
+    }
+  }
+GROUP BY ?count_P3780_pharmaceutical_product ?count_P2175_disease

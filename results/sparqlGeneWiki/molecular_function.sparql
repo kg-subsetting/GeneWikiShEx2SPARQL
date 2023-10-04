@@ -1,0 +1,30 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?molecular_function) AS ?count_molecular_function) ?count_P361_molecular_function ?count_P527_molecular_function ?count_P279_molecular_function
+WHERE
+  { ?molecular_function
+              wdt:P31  wd:Q14860489
+    { SELECT  (COUNT(?y) AS ?count_P361_molecular_function)
+      WHERE
+        { ?x  wdt:P31   wd:Q14860489 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q14860489
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_molecular_function)
+      WHERE
+        { ?x  wdt:P31   wd:Q14860489 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q14860489
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P279_molecular_function)
+      WHERE
+        { ?x  wdt:P31   wd:Q14860489 ;
+              wdt:P279  ?y .
+          ?y  wdt:P31   wd:Q14860489
+        }
+    }
+  }
+GROUP BY ?count_P361_molecular_function ?count_P527_molecular_function ?count_P279_molecular_function

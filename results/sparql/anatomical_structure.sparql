@@ -1,0 +1,23 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?anatomical_structure) AS ?count_anatomical_structure) ?count_P361_anatomical_structure ?count_P527_anatomical_structure
+WHERE
+  { ?anatomical_structure
+              wdt:P31  wd:Q4936952
+    { SELECT  (COUNT(?y) AS ?count_P361_anatomical_structure)
+      WHERE
+        { ?x  wdt:P31   wd:Q4936952 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q4936952
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_anatomical_structure)
+      WHERE
+        { ?x  wdt:P31   wd:Q4936952 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q4936952
+        }
+    }
+  }
+GROUP BY ?count_P361_anatomical_structure ?count_P527_anatomical_structure

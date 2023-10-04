@@ -1,0 +1,72 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?biological_process) AS ?count_biological_process) ?count_P361_medication ?count_P128_molecular_function ?count_P527_chemical_compound ?count_P279_biological_process ?count_P527_medication ?count_P361_chemical_compound ?count_P361_biological_process ?count_P527_biological_process ?count_P128_biological_process
+WHERE
+  { ?biological_process
+              wdt:P31  wd:Q2996394
+    { SELECT  (COUNT(?y) AS ?count_P361_medication)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P128_molecular_function)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P128  ?y .
+          ?y  wdt:P31   wd:Q14860489
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_chemical_compound)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P279_biological_process)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P279  ?y .
+          ?y  wdt:P31   wd:Q2996394
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_medication)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_chemical_compound)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_biological_process)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q2996394
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_biological_process)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q2996394
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P128_biological_process)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P128  ?y .
+          ?y  wdt:P31   wd:Q2996394
+        }
+    }
+  }
+GROUP BY ?count_P361_medication ?count_P128_molecular_function ?count_P527_chemical_compound ?count_P279_biological_process ?count_P527_medication ?count_P361_chemical_compound ?count_P361_biological_process ?count_P527_biological_process ?count_P128_biological_process

@@ -1,0 +1,23 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?biological_process) AS ?count_biological_process) ?count_P527_disease ?count_P279_biological_process
+WHERE
+  { ?biological_process
+              wdt:P31  wd:Q2996394
+    { SELECT  (COUNT(?y) AS ?count_P527_disease)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q12136
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P279_biological_process)
+      WHERE
+        { ?x  wdt:P31   wd:Q2996394 ;
+              wdt:P279  ?y .
+          ?y  wdt:P31   wd:Q2996394
+        }
+    }
+  }
+GROUP BY ?count_P527_disease ?count_P279_biological_process

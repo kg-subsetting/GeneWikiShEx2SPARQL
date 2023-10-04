@@ -1,0 +1,71 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?gene) AS ?count_gene) ?count_P2293_disease ?count_P703_taxon ?count_P684_gene ?count_P682_biological_process ?count_P688_protein ?count_P527_biological_pathway ?count_P1057_mechanism_of_action ?count_P688_molecular_function ?count_P688_cellular_component
+WHERE
+  { ?gene  wdt:P31  wd:Q7187
+    { SELECT  (COUNT(?y) AS ?count_P2293_disease)
+      WHERE
+        { ?x  wdt:P31    wd:Q7187 ;
+              wdt:P2293  ?y .
+          ?y  wdt:P31    wd:Q12136
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P703_taxon)
+      WHERE
+        { ?x  wdt:P31   wd:Q7187 ;
+              wdt:P703  ?y .
+          ?y  wdt:P31   wd:Q16521
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P684_gene)
+      WHERE
+        { ?x  wdt:P31   wd:Q7187 ;
+              wdt:P684  ?y .
+          ?y  wdt:P31   wd:Q7187
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P682_biological_process)
+      WHERE
+        { ?x  wdt:P31   wd:Q7187 ;
+              wdt:P682  ?y .
+          ?y  wdt:P31   wd:Q2996394
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P688_protein)
+      WHERE
+        { ?x  wdt:P31   wd:Q7187 ;
+              wdt:P688  ?y .
+          ?y  wdt:P31   wd:Q8054
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_biological_pathway)
+      WHERE
+        { ?x  wdt:P31   wd:Q7187 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q4915012
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P1057_mechanism_of_action)
+      WHERE
+        { ?x  wdt:P31    wd:Q7187 ;
+              wdt:P1057  ?y .
+          ?y  wdt:P31    wd:Q3271540
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P688_molecular_function)
+      WHERE
+        { ?x  wdt:P31   wd:Q7187 ;
+              wdt:P688  ?y .
+          ?y  wdt:P31   wd:Q14860489
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P688_cellular_component)
+      WHERE
+        { ?x  wdt:P31   wd:Q7187 ;
+              wdt:P688  ?y .
+          ?y  wdt:P31   wd:Q5058355
+        }
+    }
+  }
+GROUP BY ?count_P2293_disease ?count_P703_taxon ?count_P684_gene ?count_P682_biological_process ?count_P688_protein ?count_P527_biological_pathway ?count_P1057_mechanism_of_action ?count_P688_molecular_function ?count_P688_cellular_component

@@ -1,0 +1,72 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?pharmaceutical_product) AS ?count_pharmaceutical_product) ?count_P3780_pharmacologic_action ?count_P3781_therapeutic_use ?count_P3781_chemical_compound ?count_P3780_medication ?count_P3780_therapeutic_use ?count_P3781_pharmacologic_action ?count_P4044_disease ?count_P3781_medication ?count_P3780_chemical_compound
+WHERE
+  { ?pharmaceutical_product
+              wdt:P31  wd:Q28885102
+    { SELECT  (COUNT(?y) AS ?count_P3780_pharmacologic_action)
+      WHERE
+        { ?x  wdt:P31    wd:Q28885102 ;
+              wdt:P3780  ?y .
+          ?y  wdt:P31    wd:Q50377224
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3781_therapeutic_use)
+      WHERE
+        { ?x  wdt:P31    wd:Q28885102 ;
+              wdt:P3781  ?y .
+          ?y  wdt:P31    wd:Q50379781
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3781_chemical_compound)
+      WHERE
+        { ?x  wdt:P31    wd:Q28885102 ;
+              wdt:P3781  ?y .
+          ?y  wdt:P31    wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3780_medication)
+      WHERE
+        { ?x  wdt:P31    wd:Q28885102 ;
+              wdt:P3780  ?y .
+          ?y  wdt:P31    wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3780_therapeutic_use)
+      WHERE
+        { ?x  wdt:P31    wd:Q28885102 ;
+              wdt:P3780  ?y .
+          ?y  wdt:P31    wd:Q50379781
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3781_pharmacologic_action)
+      WHERE
+        { ?x  wdt:P31    wd:Q28885102 ;
+              wdt:P3781  ?y .
+          ?y  wdt:P31    wd:Q50377224
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P4044_disease)
+      WHERE
+        { ?x  wdt:P31    wd:Q28885102 ;
+              wdt:P4044  ?y .
+          ?y  wdt:P31    wd:Q12136
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3781_medication)
+      WHERE
+        { ?x  wdt:P31    wd:Q28885102 ;
+              wdt:P3781  ?y .
+          ?y  wdt:P31    wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3780_chemical_compound)
+      WHERE
+        { ?x  wdt:P31    wd:Q28885102 ;
+              wdt:P3780  ?y .
+          ?y  wdt:P31    wd:Q11173
+        }
+    }
+  }
+GROUP BY ?count_P3780_pharmacologic_action ?count_P3781_therapeutic_use ?count_P3781_chemical_compound ?count_P3780_medication ?count_P3780_therapeutic_use ?count_P3781_pharmacologic_action ?count_P4044_disease ?count_P3781_medication ?count_P3780_chemical_compound

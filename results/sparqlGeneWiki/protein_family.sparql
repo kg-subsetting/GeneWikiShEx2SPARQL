@@ -1,0 +1,23 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?protein_family) AS ?count_protein_family) ?count_P527_protein ?count_P279_protein_family
+WHERE
+  { ?protein_family
+              wdt:P31  wd:Q417841
+    { SELECT  (COUNT(?y) AS ?count_P527_protein)
+      WHERE
+        { ?x  wdt:P31   wd:Q417841 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q8054
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P279_protein_family)
+      WHERE
+        { ?x  wdt:P31   wd:Q417841 ;
+              wdt:P279  ?y .
+          ?y  wdt:P31   wd:Q417841
+        }
+    }
+  }
+GROUP BY ?count_P527_protein ?count_P279_protein_family

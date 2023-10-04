@@ -1,0 +1,106 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?medication) AS ?count_medication) ?count_P2175_disease ?count_P3489_disease ?count_P3780_pharmaceutical_product ?count_P3489_medication ?count_P361_biological_pathway ?count_P769_pharmacologic_action ?count_P769_chemical_compound ?count_P769_therapeutic_use ?count_P2868_pharmacologic_action ?count_P2868_therapeutic_use ?count_P279_pharmacologic_action ?count_P279_therapeutic_use ?count_P2868_mechanism_of_action ?count_P2175_symptom
+WHERE
+  { ?medication  wdt:P31  wd:Q12140
+    { SELECT  (COUNT(?y) AS ?count_P2175_disease)
+      WHERE
+        { ?x  wdt:P31    wd:Q12140 ;
+              wdt:P2175  ?y .
+          ?y  wdt:P31    wd:Q12136
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3489_disease)
+      WHERE
+        { ?x  wdt:P31    wd:Q12140 ;
+              wdt:P3489  ?y .
+          ?y  wdt:P31    wd:Q12136
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3780_pharmaceutical_product)
+      WHERE
+        { ?x  wdt:P31    wd:Q12140 ;
+              wdt:P3780  ?y .
+          ?y  wdt:P31    wd:Q28885102
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3489_medication)
+      WHERE
+        { ?x  wdt:P31    wd:Q12140 ;
+              wdt:P3489  ?y .
+          ?y  wdt:P31    wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_biological_pathway)
+      WHERE
+        { ?x  wdt:P31   wd:Q12140 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q4915012
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P769_pharmacologic_action)
+      WHERE
+        { ?x  wdt:P31   wd:Q12140 ;
+              wdt:P769  ?y .
+          ?y  wdt:P31   wd:Q50377224
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P769_chemical_compound)
+      WHERE
+        { ?x  wdt:P31   wd:Q12140 ;
+              wdt:P769  ?y .
+          ?y  wdt:P31   wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P769_therapeutic_use)
+      WHERE
+        { ?x  wdt:P31   wd:Q12140 ;
+              wdt:P769  ?y .
+          ?y  wdt:P31   wd:Q50379781
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2868_pharmacologic_action)
+      WHERE
+        { ?x  wdt:P31    wd:Q12140 ;
+              wdt:P2868  ?y .
+          ?y  wdt:P31    wd:Q50377224
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2868_therapeutic_use)
+      WHERE
+        { ?x  wdt:P31    wd:Q12140 ;
+              wdt:P2868  ?y .
+          ?y  wdt:P31    wd:Q50379781
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P279_pharmacologic_action)
+      WHERE
+        { ?x  wdt:P31   wd:Q12140 ;
+              wdt:P279  ?y .
+          ?y  wdt:P31   wd:Q50377224
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P279_therapeutic_use)
+      WHERE
+        { ?x  wdt:P31   wd:Q12140 ;
+              wdt:P279  ?y .
+          ?y  wdt:P31   wd:Q50379781
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2868_mechanism_of_action)
+      WHERE
+        { ?x  wdt:P31    wd:Q12140 ;
+              wdt:P2868  ?y .
+          ?y  wdt:P31    wd:Q3271540
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2175_symptom)
+      WHERE
+        { ?x  wdt:P31    wd:Q12140 ;
+              wdt:P2175  ?y .
+          ?y  wdt:P31    wd:Q169872
+        }
+    }
+  }
+GROUP BY ?count_P2175_disease ?count_P3489_disease ?count_P3780_pharmaceutical_product ?count_P3489_medication ?count_P361_biological_pathway ?count_P769_pharmacologic_action ?count_P769_chemical_compound ?count_P769_therapeutic_use ?count_P2868_pharmacologic_action ?count_P2868_therapeutic_use ?count_P279_pharmacologic_action ?count_P279_therapeutic_use ?count_P2868_mechanism_of_action ?count_P2175_symptom

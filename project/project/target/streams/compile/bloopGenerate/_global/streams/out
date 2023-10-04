@@ -1,4 +1,4 @@
-[debug] [genewikishex2sparql-build-build] Classpath dependencies List()
-[debug] [genewikishex2sparql-build-build] Dependencies from configurations List()
-[debug] Bloop wrote the configuration of project 'genewikishex2sparql-build-build' to '/home/labra/GeneWikiShEx2SPARQL/project/project/.bloop/genewikishex2sparql-build-build.json'
-[success] Generated .bloop/genewikishex2sparql-build-build.json
+[0m[[0m[0mdebug[0m] [0m[0m[genewikishex2sparql-build-build] Classpath dependencies List()[0m
+[0m[[0m[0mdebug[0m] [0m[0m[genewikishex2sparql-build-build] Dependencies from configurations List()[0m
+[0m[[0m[0mdebug[0m] [0m[0mBloop wrote the configuration of project 'genewikishex2sparql-build-build' to '/home/labra/GeneWikiShEx2SPARQL/project/project/.bloop/genewikishex2sparql-build-build.json'[0m
+[0m[[0m[32msuccess[0m] [0m[0mGenerated .bloop/genewikishex2sparql-build-build.json[0m

@@ -1,0 +1,23 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?protein_domain) AS ?count_protein_domain) ?count_P527_protein_domain ?count_P361_protein_domain
+WHERE
+  { ?protein_domain
+              wdt:P31  wd:Q898273
+    { SELECT  (COUNT(?y) AS ?count_P527_protein_domain)
+      WHERE
+        { ?x  wdt:P31   wd:Q898273 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q898273
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_protein_domain)
+      WHERE
+        { ?x  wdt:P31   wd:Q898273 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q898273
+        }
+    }
+  }
+GROUP BY ?count_P527_protein_domain ?count_P361_protein_domain

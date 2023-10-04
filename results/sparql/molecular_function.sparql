@@ -1,0 +1,30 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?molecular_function) AS ?count_molecular_function) ?count_P680_molecular_function ?count_P702_gene ?count_P681_cellular_component
+WHERE
+  { ?molecular_function
+              wdt:P31  wd:Q14860489
+    { SELECT  (COUNT(?y) AS ?count_P680_molecular_function)
+      WHERE
+        { ?x  wdt:P31   wd:Q14860489 ;
+              wdt:P680  ?y .
+          ?y  wdt:P31   wd:Q14860489
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P702_gene)
+      WHERE
+        { ?x  wdt:P31   wd:Q14860489 ;
+              wdt:P702  ?y .
+          ?y  wdt:P31   wd:Q7187
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P681_cellular_component)
+      WHERE
+        { ?x  wdt:P31   wd:Q14860489 ;
+              wdt:P681  ?y .
+          ?y  wdt:P31   wd:Q5058355
+        }
+    }
+  }
+GROUP BY ?count_P680_molecular_function ?count_P702_gene ?count_P681_cellular_component

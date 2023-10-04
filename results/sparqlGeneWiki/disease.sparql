@@ -1,0 +1,85 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?disease) AS ?count_disease) ?count_P2176_chemical_compound ?count_P2175_therapeutic_use ?count_P2175_medication ?count_P2175_chemical_compound ?count_P828_taxon ?count_P780_disease ?count_P279_disease ?count_P2176_therapeutic_use ?count_P2176_medication ?count_P2293_gene ?count_P927_anatomical_structure
+WHERE
+  { ?disease  wdt:P31  wd:Q12136
+    { SELECT  (COUNT(?y) AS ?count_P2176_chemical_compound)
+      WHERE
+        { ?x  wdt:P31    wd:Q12136 ;
+              wdt:P2176  ?y .
+          ?y  wdt:P31    wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2175_therapeutic_use)
+      WHERE
+        { ?x  wdt:P31    wd:Q12136 ;
+              wdt:P2175  ?y .
+          ?y  wdt:P31    wd:Q50379781
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2175_medication)
+      WHERE
+        { ?x  wdt:P31    wd:Q12136 ;
+              wdt:P2175  ?y .
+          ?y  wdt:P31    wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2175_chemical_compound)
+      WHERE
+        { ?x  wdt:P31    wd:Q12136 ;
+              wdt:P2175  ?y .
+          ?y  wdt:P31    wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P828_taxon)
+      WHERE
+        { ?x  wdt:P31   wd:Q12136 ;
+              wdt:P828  ?y .
+          ?y  wdt:P31   wd:Q16521
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P780_disease)
+      WHERE
+        { ?x  wdt:P31   wd:Q12136 ;
+              wdt:P780  ?y .
+          ?y  wdt:P31   wd:Q12136
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P279_disease)
+      WHERE
+        { ?x  wdt:P31   wd:Q12136 ;
+              wdt:P279  ?y .
+          ?y  wdt:P31   wd:Q12136
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2176_therapeutic_use)
+      WHERE
+        { ?x  wdt:P31    wd:Q12136 ;
+              wdt:P2176  ?y .
+          ?y  wdt:P31    wd:Q50379781
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2176_medication)
+      WHERE
+        { ?x  wdt:P31    wd:Q12136 ;
+              wdt:P2176  ?y .
+          ?y  wdt:P31    wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2293_gene)
+      WHERE
+        { ?x  wdt:P31    wd:Q12136 ;
+              wdt:P2293  ?y .
+          ?y  wdt:P31    wd:Q7187
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P927_anatomical_structure)
+      WHERE
+        { ?x  wdt:P31   wd:Q12136 ;
+              wdt:P927  ?y .
+          ?y  wdt:P31   wd:Q4936952
+        }
+    }
+  }
+GROUP BY ?count_P2176_chemical_compound ?count_P2175_therapeutic_use ?count_P2175_medication ?count_P2175_chemical_compound ?count_P828_taxon ?count_P780_disease ?count_P279_disease ?count_P2176_therapeutic_use ?count_P2176_medication ?count_P2293_gene ?count_P927_anatomical_structure

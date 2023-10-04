@@ -1,0 +1,134 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?protein) AS ?count_protein) ?count_P702_gene ?count_P361_protein_domain ?count_P681_anatomical_structure ?count_P527_active_site ?count_P682_biological_process ?count_P361_active_site ?count_P361_binding_site ?count_P361_protein_family ?count_P527_protein_domain ?count_P129_protein ?count_P527_binding_site ?count_P527_protein_family ?count_P703_taxon ?count_P680_molecular_function ?count_P681_cellular_component ?count_P681_protein ?count_P129_medication ?count_P129_chemical_compound
+WHERE
+  { ?protein  wdt:P31  wd:Q8054
+    { SELECT  (COUNT(?y) AS ?count_P702_gene)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P702  ?y .
+          ?y  wdt:P31   wd:Q7187
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_protein_domain)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q898273
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P681_anatomical_structure)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P681  ?y .
+          ?y  wdt:P31   wd:Q4936952
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_active_site)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q423026
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P682_biological_process)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P682  ?y .
+          ?y  wdt:P31   wd:Q2996394
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_active_site)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q423026
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_binding_site)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q616005
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P361_protein_family)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q417841
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_protein_domain)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q898273
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P129_protein)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P129  ?y .
+          ?y  wdt:P31   wd:Q8054
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_binding_site)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q616005
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_protein_family)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q417841
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P703_taxon)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P703  ?y .
+          ?y  wdt:P31   wd:Q16521
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P680_molecular_function)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P680  ?y .
+          ?y  wdt:P31   wd:Q14860489
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P681_cellular_component)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P681  ?y .
+          ?y  wdt:P31   wd:Q5058355
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P681_protein)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P681  ?y .
+          ?y  wdt:P31   wd:Q8054
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P129_medication)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P129  ?y .
+          ?y  wdt:P31   wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P129_chemical_compound)
+      WHERE
+        { ?x  wdt:P31   wd:Q8054 ;
+              wdt:P129  ?y .
+          ?y  wdt:P31   wd:Q11173
+        }
+    }
+  }
+GROUP BY ?count_P702_gene ?count_P361_protein_domain ?count_P681_anatomical_structure ?count_P527_active_site ?count_P682_biological_process ?count_P361_active_site ?count_P361_binding_site ?count_P361_protein_family ?count_P527_protein_domain ?count_P129_protein ?count_P527_binding_site ?count_P527_protein_family ?count_P703_taxon ?count_P680_molecular_function ?count_P681_cellular_component ?count_P681_protein ?count_P129_medication ?count_P129_chemical_compound

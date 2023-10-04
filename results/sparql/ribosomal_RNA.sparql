@@ -1,0 +1,16 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?ribosomal_RNA) AS ?count_ribosomal_RNA) ?count_P703_taxon
+WHERE
+  { ?ribosomal_RNA
+              wdt:P31  wd:Q28885102
+    { SELECT  (COUNT(?y) AS ?count_P703_taxon)
+      WHERE
+        { ?x  wdt:P31   wd:Q28885102 ;
+              wdt:P703  ?y .
+          ?y  wdt:P31   wd:Q16521
+        }
+    }
+  }
+GROUP BY ?count_P703_taxon

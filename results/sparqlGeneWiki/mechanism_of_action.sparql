@@ -1,0 +1,8 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?mechanism_of_action) AS ?count_mechanism_of_action)
+WHERE
+  { ?mechanism_of_action
+              wdt:P31  wd:Q3271540
+  }

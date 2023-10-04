@@ -1,0 +1,51 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?sequence_variant) AS ?count_sequence_variant) ?count_P1057_chromosome ?count_P3433_gene ?count_P3355_medication ?count_P3354_medication ?count_P3354_chemical_compound ?count_P3355_chemical_compound
+WHERE
+  { ?sequence_variant
+              wdt:P31  wd:Q15304597
+    { SELECT  (COUNT(?y) AS ?count_P1057_chromosome)
+      WHERE
+        { ?x  wdt:P31    wd:Q15304597 ;
+              wdt:P1057  ?y .
+          ?y  wdt:P31    wd:Q37748
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3433_gene)
+      WHERE
+        { ?x  wdt:P31    wd:Q15304597 ;
+              wdt:P3433  ?y .
+          ?y  wdt:P31    wd:Q7187
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3355_medication)
+      WHERE
+        { ?x  wdt:P31    wd:Q15304597 ;
+              wdt:P3355  ?y .
+          ?y  wdt:P31    wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3354_medication)
+      WHERE
+        { ?x  wdt:P31    wd:Q15304597 ;
+              wdt:P3354  ?y .
+          ?y  wdt:P31    wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3354_chemical_compound)
+      WHERE
+        { ?x  wdt:P31    wd:Q15304597 ;
+              wdt:P3354  ?y .
+          ?y  wdt:P31    wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3355_chemical_compound)
+      WHERE
+        { ?x  wdt:P31    wd:Q15304597 ;
+              wdt:P3355  ?y .
+          ?y  wdt:P31    wd:Q11173
+        }
+    }
+  }
+GROUP BY ?count_P1057_chromosome ?count_P3433_gene ?count_P3355_medication ?count_P3354_medication ?count_P3354_chemical_compound ?count_P3355_chemical_compound

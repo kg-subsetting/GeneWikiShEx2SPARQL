@@ -1,0 +1,8 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?therapeutic_use) AS ?count_therapeutic_use)
+WHERE
+  { ?therapeutic_use
+              wdt:P31  wd:Q50379781
+  }

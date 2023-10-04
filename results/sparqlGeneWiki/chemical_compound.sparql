@@ -1,0 +1,72 @@
+PREFIX  wd:   <http://www.wikidata.org/entity/>
+PREFIX  wdt:  <http://www.wikidata.org/prop/direct/>
+
+SELECT  (COUNT(?chemical_compound) AS ?count_chemical_compound) ?count_P361_medication ?count_P769_pharmacologic_action ?count_P3489_disease ?count_P3364_chemical_compound ?count_P527_medication ?count_P279_pharmacologic_action ?count_P2868_pharmacologic_action ?count_P769_chemical_compound ?count_P2868_mechanism_of_action
+WHERE
+  { ?chemical_compound
+              wdt:P31  wd:Q11173
+    { SELECT  (COUNT(?y) AS ?count_P361_medication)
+      WHERE
+        { ?x  wdt:P31   wd:Q11173 ;
+              wdt:P361  ?y .
+          ?y  wdt:P31   wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P769_pharmacologic_action)
+      WHERE
+        { ?x  wdt:P31   wd:Q11173 ;
+              wdt:P769  ?y .
+          ?y  wdt:P31   wd:Q50377224
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3489_disease)
+      WHERE
+        { ?x  wdt:P31    wd:Q11173 ;
+              wdt:P3489  ?y .
+          ?y  wdt:P31    wd:Q12136
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P3364_chemical_compound)
+      WHERE
+        { ?x  wdt:P31    wd:Q11173 ;
+              wdt:P3364  ?y .
+          ?y  wdt:P31    wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P527_medication)
+      WHERE
+        { ?x  wdt:P31   wd:Q11173 ;
+              wdt:P527  ?y .
+          ?y  wdt:P31   wd:Q12140
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P279_pharmacologic_action)
+      WHERE
+        { ?x  wdt:P31   wd:Q11173 ;
+              wdt:P279  ?y .
+          ?y  wdt:P31   wd:Q50377224
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2868_pharmacologic_action)
+      WHERE
+        { ?x  wdt:P31    wd:Q11173 ;
+              wdt:P2868  ?y .
+          ?y  wdt:P31    wd:Q50377224
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P769_chemical_compound)
+      WHERE
+        { ?x  wdt:P31   wd:Q11173 ;
+              wdt:P769  ?y .
+          ?y  wdt:P31   wd:Q11173
+        }
+    }
+    { SELECT  (COUNT(?y) AS ?count_P2868_mechanism_of_action)
+      WHERE
+        { ?x  wdt:P31    wd:Q11173 ;
+              wdt:P2868  ?y .
+          ?y  wdt:P31    wd:Q3271540
+        }
+    }
+  }
+GROUP BY ?count_P361_medication ?count_P769_pharmacologic_action ?count_P3489_disease ?count_P3364_chemical_compound ?count_P527_medication ?count_P279_pharmacologic_action ?count_P2868_pharmacologic_action ?count_P769_chemical_compound ?count_P2868_mechanism_of_action
